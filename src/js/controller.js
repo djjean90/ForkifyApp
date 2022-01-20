@@ -54,8 +54,6 @@ const controlSearchResults = async function () {
     // 2) Load resulsts
     await model.loadSearchResults(query);
     // 3) Render results
-    console.log(model.state.search.results);
-    // resultsView.render(model.state.search.results);
     resultsView.render(model.getSearchResultsPage());
     // Pagination buttons rendering
     paginationView.render(model.state.search);
@@ -109,7 +107,6 @@ const controlAddRecipe = async function (newRecipe) {
     addRecipeView.renderSpinner();
 
     await model.uploadRecipe(newRecipe);
-    console.log(model.state.recipe);
     // Render recipe
     recipeView.render(model.state.recipe);
 

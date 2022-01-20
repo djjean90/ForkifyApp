@@ -24,19 +24,16 @@ export default class View {
 
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
-      // console.log(curEl, newEl);
 
       //    Update changed text
       if (
         !newEl.isEqualNode(curEl) &&
         newEl.firstChild?.nodeValue.trim() !== ''
       ) {
-        // console.log('🤦‍♀️', newEl.firstChild.nodeValue.trim());
         curEl.textContent = newEl.textContent;
       }
 
       if (!newEl.isEqualNode(curEl)) {
-        // console.log(Array.from(newEl.attributes));
         Array.from(newEl.attributes).forEach(attr =>
           curEl.setAttribute(attr.name, attr.value)
         );

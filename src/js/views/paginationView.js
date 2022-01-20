@@ -8,21 +8,17 @@ class PaginationView extends View {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--inline');
       if (!btn) return;
-      console.log(btn);
 
       const goToPage = +btn.dataset.goto;
-      console.log(goToPage);
       handler(goToPage);
     });
   }
 
   _generateMarkup() {
-    console.log(this._data.resultPerPage);
     const curPage = this._data.page;
     const numPages = Math.ceil(
       this._data.results.length / this._data.resultPerPage
     );
-    console.log(numPages);
     //   Page 1, the are others pages
     if (this._data.page === 1 && numPages > 1) {
       return `
