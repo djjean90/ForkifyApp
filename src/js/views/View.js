@@ -1,4 +1,4 @@
-import icons from 'url:../../img/icons.svg';
+import icons from '../../img/icons.svg';
 
 export default class View {
   _data;
@@ -79,7 +79,7 @@ export default class View {
             <div class="message">
               <div>
                 <svg>
-                  <use href="${icons}.svg#icon-smile"></use>
+                  <use href="${icons}#icon-smile"></use>
                 </svg>
               </div>
               <p>${message}</p>
